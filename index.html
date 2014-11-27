@@ -12,12 +12,29 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
+  <script>
+    window.onload = function() {
+      var imageEls = document.querySelectorAll(".figure img");
+      for (var i = 0; i < imageEls.length; i++) {
+        var imageEl = imageEls[i];
+        var parent = imageEl.parentNode;
+        var captionEl = parent.querySelector(".caption");
+        if (captionEl) {
+          function transferWidth() {
+            captionEl.style["max-width"] = imageEl.naturalWidth+"px";
+          }
+          if (imageEl.complete) {
+            transferWidth();
+          } else {
+            imageEl.onload = transferWidth;
+          }
+        }
+      };
+    };
+  </script>
+
   <link href="style.css" rel="stylesheet" />
-
-  <script src="jquery-2.1.0.min.js"></script>
-  <script src="underscore.js"></script>
-  <script src="app.js"></script>
-
+  
 
   <title>Ninjas & Rockstars</title>
 </head>
@@ -25,29 +42,50 @@
 
 <div class="article">
 <div id="cover" class="content-node cover">
+
+
+  <div class="cover-image">
+    <img src="cover.jpg"/>
+  </div>
+
+
 <div class="content">
+
 <h1>Ninjas &amp; Rockstars</h1>
-<div class="authors">
 
-    <a href="#contributor_70bac5d37a525c9a5042f91886d04612" class="author">Brian Shumate</a>
+<div class="article-meta">
+  
+  
+    <div class="authors">
+      By
 
+      
+      <a href="#contributor_70bac5d37a525c9a5042f91886d04612" class="author">Brian Shumate</a>
+    </div>
+  
 </div>
 
 
+  <div class="article-abstract">
+    Haiku about computers and the insane people who spend too much time with them
+  </div>
+
+
+ 
 
 
 <div class="toc">
   <div class="toc-title">Contents </div>
   <div class="toc-entries">
-
+    
       <div class="toc-entry level-2"><a href="#heading_8d788790b6ba957195d0485d8f144f96">Hard Anonymity</a></div>
-
+    
       <div class="toc-entry level-2"><a href="#heading_b6468508766c3b2c488468aa73ec1a39">robots.txt</a></div>
-
+    
       <div class="toc-entry level-2"><a href="#heading_70cf1f6f03da65874a1db32fb9213dd2">'O' Key Does Not Work</a></div>
-
+    
       <div class="toc-entry level-2"><a href="#heading_90b70081a25e4be3c1b41a62449ce839">Binary Lovers</a></div>
-
+    
   </div>
 </div>
 
@@ -63,7 +101,7 @@
 </div>
 <div id="code_block_f20841e5384467eefb2d79227052ae0d" class="content-node code-block">
 <div class="content">
-<pre>Some snowflakes are one
+<pre>Some snowflakes are one 
 Leaking cloud file descriptors
 A Sybil Attack</pre>
 </div>
@@ -77,8 +115,8 @@ A Sybil Attack</pre>
 </div>
 <div id="code_block_6e5edd5e452c164c7e39a4dfc6f78d47" class="content-node code-block">
 <div class="content">
-<pre>To deny the feels
-To deny humanity
+<pre>To deny the feels 
+To deny humanity 
 Are you a robot?</pre>
 </div>
 </div>
@@ -91,8 +129,8 @@ Are you a robot?</pre>
 </div>
 <div id="code_block_7559189f6fa73b5c04c8faa89c42ffd5" class="content-node code-block">
 <div class="content">
-<pre>Keybard shrted ut
-Frm my many tears f jy
+<pre>Keybard shrted ut 
+Frm my many tears f jy 
 key des nt wrk</pre>
 </div>
 </div>
@@ -105,15 +143,24 @@ key des nt wrk</pre>
 </div>
 <div id="code_block_ed5059044f55f224aaa2bac66b51373c" class="content-node code-block">
 <div class="content">
-<pre>You parse my headers
-We coerce each other's strings
+<pre>You parse my headers 
+We coerce each other's strings 
 Segmentation fault</pre>
 </div>
 </div>
 <div id="e708722c94382980929e0e4879131190" class="content-node text">
 <div class="content">
-
+  
 </div>
+</div>
+
+
+<div id="references" class="content-node references">
+  <div class="content">
+    
+
+    
+  </div>
 </div>
 
 <div id="publication_info" class="content-node publication-info">
@@ -121,55 +168,55 @@ Segmentation fault</pre>
 
 
 
-
+    
+    
+    
       <div class="authors">
-
+        
           <div class="author" id="contributor_70bac5d37a525c9a5042f91886d04612">
             <div class="author-name">Brian Shumate</div>
             <img class="author-image" src="contributor_70bac5d37a525c9a5042f91886d04612.jpg"/>
-            <div class="author-description">By day: distributed systems challenges with databases and stuff.
+            <div class="author-description">By day: distributed systems challenges with databases and stuff. 
 
 By night: art, writing, www, and The Lake.</div>
           </div>
-
+        
       </div>
+    
 
-
-
-
-
-
+    
 
 
 
     <div class="copyright">
-      <div class="label">Copyright</div>
+      <!-- <div class="label">Copyright</div> -->
+      
 
-
-
+      
       <div class="copyright-statement">
         Copyright &copy; 2014
         Brian Shumate
       </div>
-
+      
       <div class="license">
         No license
-
+        
       </div>
+
+
     </div>
 
   </div>
+
+<div class="generator">
+  <div class="content">
+    This article was created with <a href="http://substance.io/composer">Substance</a>, an open self-publishing system.
+  </div>
+</div>
+
 </div>
 </div>
 
-<script>
 
-    $(function() {
-      var articleEl = $('.article')[0];
-      var app = new Reader(articleEl);
-      app.start();
-    });
-
-</script>
 </body>
 </html>
